@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Place Your Order</title>
+        <link rel="stylesheet" href="order.css">
+        </head>
+        
+        <body>
+            <p class="brand">Chef Chi Meal</p>
+            <div class="order-card">
+            <h1>Place Your Order</h1>
+            <p class="order-note">Select your quantity and place your order on Whatsapp</p>
+            <p id="foodname">Jellof Rice, Plantain & Beef</p>
+            <p id="foodprice"></p>
+                <label>quantity:</label>
+                <input type="number" id="quantity" value="1" min="1">
+                <br><br>
+                <a href="https://wa.me/23407086423990"
+                id="placeholder">Place Order</a>
+                <a href="index.html" class="back-menu">Back to Menu</a>
+                <p class="thank-you">Thank You For Choosing Chef Chi Meal.</p>
+                </div>
+        
+                <script>
+                    const params = new
+                    URLSearchParams(window.location.search);
+
+                    const name = params.get("name");
+                    const price = params.get("price");
+
+                    if(name) {
+                        document.getElementById("foodname").textContent = name;
+                    }
+
+                    if (price) {
+
+                        document.getElementById("foodprice").textContent = "price: NGN" +
+                        Number(price).toLocaleString();
+                    }
+
+                    document.getElementById("placeholder").onclick = function () {
+                        this.href =
+                        "https://wa.me/23407086423990";
+                    };
+
+                    </script>
+
+  
+
+                    
+                    
+                
+
+
+
+        
+
+        </body>
+</html>
+        
+
+        
+        
