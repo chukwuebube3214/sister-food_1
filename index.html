@@ -9,10 +9,17 @@
         <body>
 
             <header>
-                <nav>
-                    <a href="#menu">Menu</a>
-                    <a href="#contact">Contact</a>
-                    </nav>
+                <nav class="main-nav" aria-label="Main navigation">
+                    <button class="menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <div class="nav-links">
+                        <a href="#menu">Menu</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </nav>
                     <div>
                 <h1>Chef Chi Meal</h1>
                 <p>Delicicous meals made fresh for you</p>
@@ -164,6 +171,19 @@
              
              <p>&copy; 2026 Chef Chi Meal</P
              </footer>
+
+             <script>
+                const menuToggle = document.querySelector('.menu-toggle');
+                const navLinks = document.querySelector('.nav-links');
+
+                if (menuToggle && navLinks) {
+                    menuToggle.addEventListener('click', () => {
+                        const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+                        menuToggle.setAttribute('aria-expanded', String(!isExpanded));
+                        navLinks.classList.toggle('open');
+                    });
+                }
+             </script>
 
              </body>
              </html>

@@ -1,22 +1,50 @@
-
 body {
     font-family: Arial, sans-serif;
     background-color: #fff7f0;
-    margin: 40px 20px;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 16px;
     text-align: center;
 }
 
 h1 {
-    font-size: 32px;
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
     color: #222;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+}
+
+.brand {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #222;
+    margin: 0 0 20px;
+}
+
+.order-card {
+    width: min(100%, 500px);
+    margin: 0 auto;
+    padding: 35px 25px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.order-note {
+    font-size: 14px;
+    color: #777;
+    margin: -10px 0 20px;
 }
 
 #foodname {
-    font-size: 26px;
+    font-size: clamp(1.35rem, 3vw, 1.8rem);
     font-weight: bold;
     color: #333;
     margin-bottom: 10px;
+    line-height: 1.4;
 }
 
 #foodprice {
@@ -27,60 +55,26 @@ h1 {
 }
 
 label {
-    font-size: 18px;
-    font-weight: bold;
-}
-
-#quantity {
-    width: 70px;
-    padding: 10px;
-    margin-left: 8px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
-}
-
-#placeholder {
-    display: block;
-    width: 220px;
-    margin: 30px auto 15px;
-    padding: 13px;
-    background-color: #25D366;
-    color: white;
-    text-decoration: none;
-    font-size: 19px;
-    font-weight: bold;
-    border-radius: 10px;
-}
-
-.order-card {
- max-width: 500px;
- margin: 30px auto;
- padding: 35px 25px;
- background-color: white;
-border-radius: 20px;
- box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-}
-
-label {
     display: block;
     margin-bottom: 8px;
     font-size: 17px;
+    font-weight: bold;
+    text-align: left;
 }
 
 #quantity {
-    width: 80px;
-    padding: 1opx;
+    width: 90px;
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 8px;
     font-size: 16px;
-    text-aliggn: center;
+    text-align: center;
 }
 
 #placeholder {
-    display: block;
-    width: 85%;
-    max-width: 300px;
+    display: inline-block;
+    width: 100%;
+    max-width: 260px;
     margin: 25px auto 15px;
     padding: 14px;
     background-color: #25D366;
@@ -97,79 +91,45 @@ label {
     transform: translateY(-2px);
 }
 
-back-menu {
+.back-menu {
     display: inline-block;
     margin-top: 10px;
     padding: 10px 18px;
     color: #333;
-    background-color: none;
+    background: transparent;
+    border: 2px solid #25D366;
     border-radius: 8px;
     font-weight: bold;
     transition: 0.3s;
 }
 
-back-menu: hover {
+.back-menu:hover {
     background-color: #e2e2e2;
 }
 
-#foodname {
-    font-size: 24px;
-    font-weight: bold;
-    color: #222;
-    margin: 10px 0;
-    line-height: 1.4;
-}
-
-#foodprice {
-    font-size:21px;
-    font-weight: bold;
-    color: #d35400;
-    margin: 8px 0 25px;
-}
-
-@media (max-width: 600px) {
-    body {
-        padding: 25px 15px;
-    }
-    order-card {
-        width: auto;
-        padding: 30px 20px;
-        margin: 20px auto;
-    }
-
-    #foodname {
-        font-size: 21px;
-    }
-
-    #foodprice {
-        font-size: 19px;
-    }
-    
-    #placeholder {
-        width: 90%;
-    }
-}
-
-brand {
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    color: #222;
-    margin: 10px 0 20px;
-}
-
-order-note {
-    font-size: 14px;
-    color: #777;
-    margin-top: -15px;
-    margin-bottom: 20px;
-}
-
-thank-you {
+.thank-you {
     margin-top: 20px;
     font-size: 14px;
     color: #777;
 }
 
+@media (max-width: 480px) {
+    body {
+        padding: 20px 12px;
+    }
 
-    
+    .order-card {
+        padding: 25px 16px;
+    }
+
+    #quantity {
+        width: 100%;
+        max-width: 120px;
+    }
+
+    #placeholder,
+    .back-menu {
+        width: 100%;
+        max-width: 100%;
+    }
+}
